@@ -18,7 +18,7 @@
                 <div class="form-group-lg">
                     <label for="password_confirmation">验证码：</label>
                     <div class="form-inline">
-                        <input type="text" name="password_confirmation" class="form-control" value="">
+                        <input type="text" name="captcha" class="form-control inp-captcha" value="">
                         <img src="{{ route('passport.captcha', time()) }}" data-url="{{ route('passport.captcha') }}" class="captcha pull-right">
                     </div>
                 </div>
