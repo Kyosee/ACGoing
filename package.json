@@ -12,15 +12,19 @@
   "devDependencies": {
     "axios": "^0.16.2",
     "bootstrap-sass": "^3.3.7",
-    "cross-env": "^5.0.1",
+    "cross-env": "^5.0.3",
     "jquery": "^3.1.1",
     "laravel-mix": "^1.0",
     "lodash": "^4.17.4",
     "vue": "^2.1.10"
   },
   "dependencies": {
+<<<<<<< HEAD
+    "cross-spawn": "^5.0.1",
+=======
     "browser-sync": "^2.18.13",
     "browser-sync-webpack-plugin": "^1.2.0",
+>>>>>>> 7c3b51592c0106ebd88e1f26ec40bb800b23de03
     "font-awesome": "^4.7.0"
   }
 }
