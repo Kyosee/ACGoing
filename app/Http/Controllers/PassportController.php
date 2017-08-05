@@ -3,25 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models;
 
 class PassportController extends Controller
 {
     /**
-     * user signup
+     * user signup view
      */
     public function signup(){
         return view('passport.signup');
     }
 
     /**
-     * user login
+     * user login view
      */
     public function login(){
         return view('passport.login');
     }
 
     /**
-     * passport captcha
+     * make passport captcha
+     * @return file     captcha picture stream
      */
     public function captcha(){
         $Kit = new KitController();

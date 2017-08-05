@@ -7,6 +7,7 @@
         <title>@yield('title', 'ACGoing') - 攻城大凉皮的小博客</title>
         <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
         <script src="{{ mix('/js/app.js') }}" charset="utf-8"></script>
+        <script src="{{ mix('/js/passport.js') }}" charset="utf-8"></script>
     </head>
     <body>
         @include('layouts._header')
