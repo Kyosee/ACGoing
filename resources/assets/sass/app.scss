@@ -359,7 +359,13 @@ a:hover{
         text-decoration: none;
     }
 
+    .inp-captcha{
+        width: 65%;
+    }
+
     .captcha{
+        height: 46px;;
+        width: 32%;
         border-radius: 3px;
     }
 }
