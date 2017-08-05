@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@home')->name('home');
+
+// passport
+Route::get('passport/signup', 'PassportController@signup')->name('signup');
+Route::get('passport/captcha', 'PassportController@captcha')->name('passport.captcha');
+
+Route::get('passport/login', 'PassportController@login')->name('login');
