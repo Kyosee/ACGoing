@@ -6,6 +6,8 @@
  */
 
 require('./bootstrap');
+require('../libs/layer/layer');
+
 
 // window.Vue = require('vue');
 
@@ -20,3 +22,7 @@ require('./bootstrap');
 // const app = new Vue({
 //     el: '#app'
 // });
+
+layer.config({
+    extend: '../../libs/layer/skin/layer.css'
+});

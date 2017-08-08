@@ -42,7 +42,7 @@ li{
     list-style: none;
 }
 
-a:hover{
+a:hover, a:focus{
     color: $site-color-green !important;
 }
 
@@ -148,8 +148,18 @@ a:hover{
     }
 }
 
-.nav-sign > li > a{
-    color: $site-color-green !important;
+.nav-sign {
+    .dropdown-menu > li{
+        line-height: 50px;
+        text-align: center;
+        a{
+            line-height: 50px;
+            padding: 0;
+        }
+    }
+    & > li > a{
+        color: $site-color-green !important;
+    }
 }
 
 // site-content
@@ -264,7 +274,8 @@ a:hover{
 
 .article-list{
     ul{
-        padding-right: 10px;
+        -webkit-padding-start: 10px;
+        padding-right: 0px !important;
     }
 
     h4::before{
@@ -365,8 +376,8 @@ a:hover{
 
     .captcha{
         height: 46px;;
-        width: 32%;
-        border-radius: 3px;
+        width: 30%;
+        border-radius: 6px;
     }
 }
 

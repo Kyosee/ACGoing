@@ -19,8 +19,19 @@
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right nav-sign">
-                    <li><a href="{{ route('signup') }}">注册</a></li>
-                    <li><a href="{{ route('login') }}">登录</a></li>
+                    @if(Auth::user())
+                        <li class="inline-block">
+                            <a class="dropdown-toggl" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->nickname }}</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">个人中心</a></li>
+                                <li><a href="#">我的收藏</a></li>
+                                <li><a href="{{ route('logout') }}">退出登录</a></li>
+                            </ul>
+                        </li>
+                    @else
+                        <li><a href="{{ route('signup') }}">注册</a></li>
+                        <li><a href="{{ route('login') }}">登录</a></li>
+                    @endif
                 </ul>
             </nav>
         </div>

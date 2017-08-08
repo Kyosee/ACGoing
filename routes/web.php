@@ -15,7 +15,13 @@ Route::get('/', 'HomeController@home')->name('home');
 
 // passport
 Route::get('passport/signup', 'PassportController@signup')->name('signup');
-Route::get('passport/captcha', 'PassportController@captcha')->name('passport.captcha');
+Route::post('passport/signup', 'PassportController@subReg');
 
 Route::get('passport/login', 'PassportController@login')->name('login');
-Route::get('passport/test', 'PassportController@test');
+Route::post('passport/login', 'PassportController@subLogin');
+
+Route::get('passport/logout', 'PassportController@logout')->name('logout');
+
+Route::get('passport/captcha', 'PassportController@captcha')->name('passport.captcha');
+
+// Auth::routes();

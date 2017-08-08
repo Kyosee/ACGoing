@@ -26,7 +26,7 @@ class KitController extends Controller{
 
         Session::flash($captcha_name, $phrase);
         header("Cache-Control: no-cache, must-revalidate");
-        header('Content-Type: image/jpeg');
+        header('Content-Type: image/png');
         $builder->output();
     }
 }

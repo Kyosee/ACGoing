@@ -11,5 +11,6 @@ let mix = require('laravel-mix');
  |
  */
 mix.js('resources/assets/js/app.js', 'public/js')
+    .js('resources/assets/libs/layer/layer.js', 'public/js')
     .js('resources/assets/js/passport.js', 'public/js')
     .sass('resources/assets/sass/app.scss', 'public/css').version();

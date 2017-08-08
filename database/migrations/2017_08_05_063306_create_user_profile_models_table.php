@@ -16,14 +16,14 @@ class CreateUserProfileModelsTable extends Migration
         Schema::create('user_profile', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->string('company');
-            $table->string('site');
-            $table->string('city');
-            $table->string('github');
-            $table->string('wechat');
-            $table->string('weibo_id');
-            $table->string('weibo_name');
-            $table->string('description');
+            $table->string('company')->default('');
+            $table->string('site')->default('');
+            $table->string('city')->default('');
+            $table->string('github')->default('');
+            $table->string('wechat')->default('');
+            $table->string('weibo_id')->default('');
+            $table->string('weibo_name')->default('');
+            $table->string('description')->default('');
             $table->timestamps();
         });
     }
