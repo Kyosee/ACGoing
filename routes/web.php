@@ -20,6 +20,9 @@ Route::post('passport/signup', 'PassportController@subReg');
 Route::get('passport/login', 'PassportController@login')->name('login');
 Route::post('passport/login', 'PassportController@subLogin');
 
+Route::get('passport/forget', 'PassportController@forget')->name('forget');
+Route::post('passport/forget', 'PassportController@subForget');
+
 Route::get('passport/logout', 'PassportController@logout')->name('logout');
 
 Route::get('passport/captcha', 'PassportController@captcha')->name('passport.captcha');

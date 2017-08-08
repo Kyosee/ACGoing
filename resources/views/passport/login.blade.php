@@ -26,7 +26,8 @@
                 </div>
                 <button type="submit" class="btn btn-success btn-lg full-width">登了个录</button>
                 <div class="checkbox">
-                    <a href="{{ route('signup') }}">妹有账号？前去注册</a>
+                    <a class="pull-left href="{{ route('signup') }}">妹有账号？前去注册</a>
+                    <a class="pull-right href="{{ route('forget') }}">忘记密码？</a>
                 </div>
                 {{ csrf_field()}}
             </form>

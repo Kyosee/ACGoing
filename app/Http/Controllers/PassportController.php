@@ -30,9 +30,9 @@ class PassportController extends Controller
         $UserModel = new UserModel();
         if($UserModel->createNewUser($request)){
             Auth::login($UserModel);
-            return response()->json(['result' => true, 'redirect_url' => 'home']);
+            return response()->json(['result' => true, 'redirect_url' => route('home')]);
         }else{
-            return response()->json(['result' => false]);
+            return response()->json(['result' => false, 'msg' => '注册失败请稍后重试..']);
         }
     }
 
@@ -61,9 +61,9 @@ class PassportController extends Controller
 
         // user login and remember me
         if(Auth::attempt($credentials, $request->has('remember'))){
-            return response()->json(['result' => true, 'redirect_url' => 'home']);
+            return response()->json(['result' => true, 'redirect_url' => route('home')]);
         }else{
-            return response()->json(['result' => false]);
+            return response()->json(['result' => false, 'msg' => '用户不存在或用户名密码有误']);
         }
     }
 
