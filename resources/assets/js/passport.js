@@ -20,7 +20,7 @@ $(function(){
             url: _this.attr('action'),
             success: function(response){
                 if(response.result){
-                    location.href = response.url
+                    location.href = response.redirect_url
                 }else{
                     layer.msg(response.msg);
                 }
