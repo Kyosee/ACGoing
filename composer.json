@@ -6,12 +6,8 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
-<<<<<<< HEAD
-        "caouecs/laravel-lang": "^3.0",
-=======
         "caouecs/laravel-lang": "~3.0",
         "fabpot/goutte": "^3.2",
->>>>>>> be375c4b3f88b409aa5cc08e48fa7b955065fd0b
         "gregwar/captcha": "^1.1",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0"
