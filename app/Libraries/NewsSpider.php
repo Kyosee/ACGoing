@@ -33,7 +33,6 @@ class NewsSpider {
 
         $crawler->filter($this->start_filter)->each(function($node) use ($client){
             // $news['url'] = $node->attr('href');
-            var_dump($node->text());
             return $node->text();
             foreach ($this->filter as $key => $value) {
                 $news[$key] = trim($node->filter($value)->text());
