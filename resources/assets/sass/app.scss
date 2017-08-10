@@ -35,7 +35,7 @@ a{
 .full-width{ width: 100%;}
 
 .col-md-8, .col-md-4, .col-md-6{
-    padding: 10px !important;
+    padding: 0 10px !important;
 }
 
 li{
@@ -196,19 +196,6 @@ a:hover, a:focus{
     line-height: 35px;
 }
 
-.simple{
-    ul{
-        -webkit-padding-start: 10px;
-        padding-right: 0px !important;
-    }
-
-    li{
-        border-bottom: 1px solid $site-color-green;
-        h4{
-            font-size: 14px;
-        }
-    }
-}
 
 .album-list, .article-list{
     padding: 10px 15px;
@@ -233,7 +220,7 @@ a:hover, a:focus{
 .album-list{
     .album-item{
         transition: all .5s ease .1s;
-        padding: 5px;
+        padding: 5px !important;
         border: 1px solid transparent;
         box-shadow: 0 3px 9px 1px transparent;
     }
@@ -272,30 +259,51 @@ a:hover, a:focus{
     }
 }
 
-.article-list{
-    ul{
-        -webkit-padding-start: 10px;
+.news-box{
+    & > .col-md-6:nth-child(2){
+        padding-left: 0px !important;
+    }
+
+    & > .col-md-6:nth-child(3){
         padding-right: 0px !important;
     }
 
-    h4::before{
-        content: '·';
-        font-size: 22px;
-        position: relative;
-        font-weight: bold;
-        margin-right: 10px;
-        color: $site-color-green;
+    @media (max-width: 992px){
+        & > .col-md-6:nth-child(2){
+            padding: 0px !important;
+        }
+
+        & > .col-md-6:nth-child(3){
+            padding: 0px !important;
+        }
+    }
+}
+
+.article-list{
+    ul{
+        -webkit-padding-start: 0;
+
+        li{
+            padding: 10px 20px 10px 20px;
+            border-bottom: 1px solid #dadada;
+            line-height: 35px;
+            a{
+                font-size: 18px;
+            }
+        }
+
+        li:last-child{
+            border-bottom: 0;
+        }
     }
 
     .article-summary{
-        margin-left: 20px;
         height: 66px;
         overflow: hidden;
         color: $site-summary-color;
     }
 
     .article-mate span{
-        margin-left: 20px;
         color: $site-summary-color;
         font-size: 12px;
         line-height: 40px;
@@ -312,6 +320,7 @@ a:hover, a:focus{
         display: none;
     }
 }
+
 .footer{
     background: $site-color-black;
     height: 180px;
