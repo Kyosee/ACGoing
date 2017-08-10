@@ -12,19 +12,26 @@
 */
 
 Route::get('/', 'HomeController@home')->name('home');
+Route::get('/kit', 'KitController@testSP')->name('kit');
 
 // passport
-Route::get('passport/signup', 'PassportController@signup')->name('signup');
-Route::post('passport/signup', 'PassportController@subReg');
 
-Route::get('passport/login', 'PassportController@login')->name('login');
-Route::post('passport/login', 'PassportController@subLogin');
+Route::group([], function(){
+    Route::get('passport/signup', 'PassportController@signup')->name('signup');
+    Route::post('passport/signup', 'PassportController@subReg');
 
-Route::get('passport/forget', 'PassportController@forget')->name('forget');
-Route::post('passport/forget', 'PassportController@subForget');
+    Route::get('passport/login', 'PassportController@login')->name('login');
+    Route::post('passport/login', 'PassportController@subLogin');
 
-Route::get('passport/logout', 'PassportController@logout')->name('logout');
+    Route::get('passport/forget', 'PassportController@forget')->name('forget');
+    Route::post('passport/forget', 'PassportController@subForget');
 
-Route::get('passport/captcha', 'PassportController@captcha')->name('passport.captcha');
+    Route::get('passport/logout', 'PassportController@logout')->name('logout');
 
-// Auth::routes();
+    Route::get('passport/captcha', 'PassportController@captcha')->name('passport.captcha');
+});
+
+// member
+// Route::group(['middleware' => ['auth']], function(){
+//
+// });
