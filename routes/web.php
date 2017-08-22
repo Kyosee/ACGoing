@@ -33,7 +33,7 @@ Route::group([], function(){
 });
 
 Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard'], function(Router $router){
-    $router->get('/', ['as' => 'home', 'uses' => 'HomeController@home']);
+    $router->get('/', ['as' => 'dbhome', 'uses' => 'HomeController@home']);
 
     // Spider
     Route::group(['prefix' => 'spider'], function(Router $router){
