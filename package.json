@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "cross-spawn": "^5.0.1",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "semantic-ui": "^2.2.13"
   }
 }

@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Routing\Router;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +32,17 @@ Route::group([], function(){
     Route::get('passport/captcha', 'PassportController@captcha')->name('passport.captcha');
 });
 
-// member
-// Route::group(['middleware' => ['auth']], function(){
-//
-// });
+Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard'], function(Router $router){
+    $router->get('/', ['as' => 'home', 'uses' => 'HomeController@home']);
+
+    // Spider
+    Route::group(['prefix' => 'spider'], function(Router $router){
+        $router->get('/spider_site_type', 'SpiderController@site_type')->name('spider_site_type');
+        $router->post('/spider_site_type', 'SpiderController@siteTypeStore');
+        $router->delete('/spider_site_type', 'SpiderController@siteTypeDelete');
+
+        $router->get('/', 'SpiderController@home')->name('site');
+        $router->post('/site_details/{id?}', 'SpiderController@siteStore');
+        $router->get('/site_details/{id?}', 'SpiderController@site_details')->name('site_details');
+    });
+});
