@@ -9,15 +9,17 @@ use GuzzleHttp\Client as GuzzleClient;
 class NewsSpider {
 
 
-    protected $url;
+    protected $url;         //site url
 
-    protected $crawler;
+    protected $crawler;     //spider object
 
-    protected $start_filter;
+    protected $start_filter;    //start content or list filter
 
-    protected $filter = ['title', 'description', 'author', 'post_date', 'content'];
+    protected $news_list = [];  //return result
 
-    public function __construct(Client $client, $url, $start_filter, $filter){
+    protected $filter;          //attr filter
+
+    public function __construct(Client $client, $url, $start_filter, $filter = ['url', 'title', 'description', 'author', 'post_date', 'content']){
         $this->url = $url;
         $this->filter = $filter;
         $this->client = $client;
@@ -26,38 +28,22 @@ class NewsSpider {
     }
 
     public function getSpider(){
-        $news_list = [];
-        $client = new Client();
-        $crawler = $client->request('GET', 'http://www.freebuf.com/');
+        $client = $this->client;
 
-
-        $crawler->filter($this->start_filter)->each(function($node) use ($client){
-            // $news['url'] = $node->attr('href');
-            return $node->text();
+        $this->crawler->filter($this->start_filter)->each(function($node) use ($client){
+            $news = [];
             foreach ($this->filter as $key => $value) {
-                $news[$key] = trim($node->filter($value)->text());
+                $node_info = $node->filter($value);
+                if($node_info->count() && $value){
+                    $news[$key] = $key == 'url' ? trim($node_info->attr('href')) : trim($node_info->text());
+                }
             }
 
-            $news_list[] = $news;
+            if($news){
+                $this->news_list[] = $news;
+            }
         });
 
-        return $news_list;
-    }
-
-    public function spider() {
-        $client = new Client();
-        $crawler = $client->request('GET', 'http://www.freebuf.com/');
-
-        $crawler->filter('.news-info ')->each(function($node) use ($client) {
-            $href = $node->filter('dl >dt a');
-            $text = $node->filter('.text');
-            var_dump(trim($href->text()));
-            var_dump(trim($text->text()));
-            // $href = $node->attr('href');
-            // $this->info("Scraped: " . $href);
-            // $crawler = $client->request('GET', $href);
-            // $chapter = $crawler->filter('.col-md-8 .chapter, .col-md-8 .appendix')->html();
-            // file_put_contents(base_path('resources/docs/').$href, $chapter);
-        });
+        return $this->news_list;
     }
 }

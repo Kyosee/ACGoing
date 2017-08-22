@@ -25,6 +25,7 @@ class CreateUserProfileModelsTable extends Migration
             $table->string('weibo_name')->default('');
             $table->string('description')->default('');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
