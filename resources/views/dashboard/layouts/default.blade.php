@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="{{ mix('/libs/semantic/semantic.min.css') }}">
         @yield('req_css')
         <script src="{{ mix('/js/dashboard.js') }}" charset="utf-8"></script>
+        <script src="{{ mix('/libs/semantic/semantic.min.js') }}" charset="utf-8"></script>
         @yield('req_js')
         <script type="text/javascript">
             $.ajaxSetup({

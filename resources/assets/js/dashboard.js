@@ -7,7 +7,6 @@
 
 require('./bootstrap');
 require('../libs/layer/layer');
-require('../libs/semantic/semantic');
 
 // window.Vue = require('vue');
 
