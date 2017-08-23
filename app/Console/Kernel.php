@@ -27,7 +27,7 @@ class Kernel extends ConsoleKernel
     {
         $schedule->call(function () {
            DB::table('spider_site_type')->insert(['name'=>'123']);
-       })->cron('*/2 * * * * *');
+       })->cron('0/30 * * * * ? *');
     }
 
     /**
