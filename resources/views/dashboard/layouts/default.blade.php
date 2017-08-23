@@ -5,11 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>@yield('title', '攻城大凉皮的小博客') - ACGoing</title>
+        <link rel="stylesheet" href="/libs/semantic/semantic.min.css">
         <link rel="stylesheet" href="{{ mix('/css/dashboard.css') }}">
-        <link rel="stylesheet" href="{{ mix('/libs/semantic/semantic.min.css') }}">
         @yield('req_css')
         <script src="{{ mix('/js/dashboard.js') }}" charset="utf-8"></script>
-        <script src="{{ mix('/libs/semantic/semantic.min.js') }}" charset="utf-8"></script>
+        <script src="/libs/semantic/semantic.min.js" charset="utf-8"></script>
         @yield('req_js')
         <script type="text/javascript">
             $.ajaxSetup({
