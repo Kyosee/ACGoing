@@ -21,6 +21,7 @@ class CreateSpiderSiteTable extends Migration
             $table->string('base_filter')->default('');
             $table->string('info_filter')->default('');
             $table->integer('status')->default(1);          //是否启用 0 未启用 1启用
+            $table->string('cron')->default('');          //是否启用 0 未启用 1启用
             $table->timestamps();
             $table->softDeletes();
         });

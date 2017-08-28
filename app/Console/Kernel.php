@@ -26,8 +26,10 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->call(function () {
-           DB::table('spider_site_type')->insert(['name'=>'123']);
-       })->cron('0/2 * * * *');
+        //    DB::table('spider_site_type')->insert(['name'=>'123']);
+        })->everyMinute();
+        // $schedule->command('inspire')
+        //          ->hourly();
     }
 
     /**

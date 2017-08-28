@@ -20,7 +20,7 @@ class CreateInformationModelsTable extends Migration
             $table->string('url')->default('');
             $table->string('author')->default('');
             $table->string('description')->default('');
-            $table->string('simhash')->default('');
+            $table->string('hash')->default('');
             $table->timestamp('origin_at');                 //origin news create time
             $table->timestamps();
             $table->softDeletes();
