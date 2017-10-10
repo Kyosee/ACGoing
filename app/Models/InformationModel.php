@@ -12,7 +12,7 @@ class InformationModel extends Model
      * information batch collection in database
      * @return [type] [description]
      */
-    public function batchCollection($informations){
-
+    public function createInformation($informations){
+        return $informations[1]['news'];
     }
 }

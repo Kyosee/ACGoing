@@ -18,9 +18,15 @@ class MultithreadingSpider {
         $this->site = $site;
     }
 
+    /**
+     * 开始执行采集
+     * @todo 未完成文章详情内容采集
+     * @return array [description]
+     */
     public function startSpider(){
         $client = new Client();
 
+        // 创建异步请求对象
         $requests = function() use ($client){
             foreach ($this->site as $key => $value) {
                 $uri = $value['site_url'];
@@ -30,6 +36,7 @@ class MultithreadingSpider {
             }
         };
 
+        // 创建请求池
         $pool = new Pool($client, $requests(),[
             'concurrency' => count($this->site),
             'fulfilled'   => function ($response, $index){
@@ -37,20 +44,27 @@ class MultithreadingSpider {
                 $Crawler = new Crawler($res);
                 $this->index = $index;
 
+                // 执行基础过滤匹配采集
                 $Crawler->filter($this->site[$this->index]['base_filter']['start_filter'])->each(function($node) use ($Crawler){
+                    $client = new Client();
                     $news = [];
                     unset($this->site[$this->index]['base_filter']['start_filter']);
+
+                    //遍历过滤规则对返回的响应内容进行过滤
                     foreach ($this->site[$this->index]['base_filter'] as $key => $value) {
                         $node_info = $node->filter($value);
                         if($node_info->count() && $value){
                             $news[$key] = trim($node_info->text());
-                            if($key == 'title')
-                                $news['url'] =  $node_info->attr('href');
+
+                            // 判定是否采集到文章信息及相应URL，若需要采集文章内容信息则执行内容采集
+                            if($key == 'title' && $news['url'] = $node_info->attr('href'))
+                                $child = new Crawler((string)$client->request('GET', $news['url'])->getBody());
+                                var_dump($child->filter('.property > .name > a')->html());
                         }
                     }
 
                     if($news){
-                        $this->news_list[$this->site[$this->index]['id']]['site'][] = $news;
+                        $this->news_list[$this->site[$this->index]['id']]['news'][] = $news;
                     }
                 });
                 $this->news_list[$this->site[$this->index]['id']]['site_type_id'] = $this->site[$this->index]['site_type_id'];
