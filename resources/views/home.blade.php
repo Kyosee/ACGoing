@@ -4,74 +4,79 @@
 @section('content')
     <div class="col-md-9 news-box">
         <div class="col-box article-list">
-            <h3>交流</h3>
-
+            <div class="list-title clearfix">
+                <h3 class="pull-left">交流</h3>
+                <a href="#" class="pull-right">+more</a>
+            </div>
             <ul>
                 <li>
                     <a href="#">
-                        SpringBoot 实战：我们的第一款开源软件
+                        <div class="pull-left">SpringBoot 实战：我们的第一款开源软件</div>
+                        <div class="pull-right"> 0 / 0 / 0 / 10小时前</div>
                     </a>
-                    <span class="pull-right">2017-8-10 12:10:21</span>
                 </li>
                 <li>
                     <a href="#">
-                        SpringBoot 实战：我们的第一款开源软件
+                        <div class="pull-left">SpringBoot 实战：我们的第一款开源软件</div>
+                        <div class="pull-right"> 0 / 0 / 0 / 10小时前</div>
                     </a>
-                    <span class="pull-right">2017-8-10 12:10:21</span>
                 </li>
                 <li>
                     <a href="#">
-                        SpringBoot 实战：我们的第一款开源软件
+                        <div class="pull-left">SpringBoot 实战：我们的第一款开源软件</div>
+                        <div class="pull-right"> 0 / 0 / 0 / 10小时前</div>
                     </a>
-                    <span class="pull-right">2017-8-10 12:10:21</span>
                 </li>
                 <li>
                     <a href="#">
-                        SpringBoot 实战：我们的第一款开源软件
+                        <div class="pull-left">SpringBoot 实战：我们的第一款开源软件</div>
+                        <div class="pull-right"> 0 / 0 / 0 / 10小时前</div>
                     </a>
-                    <span class="pull-right">2017-8-10 12:10:21</span>
                 </li>
                 <li>
                     <a href="#">
-                        SpringBoot 实战：我们的第一款开源软件
+                        <div class="pull-left">SpringBoot 实战：我们的第一款开源软件</div>
+                        <div class="pull-right"> 0 / 0 / 0 / 10小时前</div>
                     </a>
-                    <span class="pull-right">2017-8-10 12:10:21</span>
                 </li>
                 <li>
                     <a href="#">
-                        SpringBoot 实战：我们的第一款开源软件
+                        <div class="pull-left">SpringBoot 实战：我们的第一款开源软件</div>
+                        <div class="pull-right"> 0 / 0 / 0 / 10小时前</div>
                     </a>
-                    <span class="pull-right">2017-8-10 12:10:21</span>
                 </li>
                 <li>
                     <a href="#">
-                        SpringBoot 实战：我们的第一款开源软件
+                        <div class="pull-left">SpringBoot 实战：我们的第一款开源软件</div>
+                        <div class="pull-right"> 0 / 0 / 0 / 10小时前</div>
                     </a>
-                    <span class="pull-right">2017-8-10 12:10:21</span>
                 </li>
                 <li>
                     <a href="#">
-                        SpringBoot 实战：我们的第一款开源软件
+                        <div class="pull-left">SpringBoot 实战：我们的第一款开源软件</div>
+                        <div class="pull-right"> 0 / 0 / 0 / 10小时前</div>
                     </a>
-                    <span class="pull-right">2017-8-10 12:10:21</span>
                 </li>
                 <li>
                     <a href="#">
-                        SpringBoot 实战：我们的第一款开源软件
+                        <div class="pull-left">SpringBoot 实战：我们的第一款开源软件</div>
+                        <div class="pull-right"> 0 / 0 / 0 / 10小时前</div>
                     </a>
-                    <span class="pull-right">2017-8-10 12:10:21</span>
                 </li>
                 <li>
                     <a href="#">
-                        SpringBoot 实战：我们的第一款开源软件
+                        <div class="pull-left">SpringBoot 实战：我们的第一款开源软件</div>
+                        <div class="pull-right"> 0 / 0 / 0 / 10小时前</div>
                     </a>
-                    <span class="pull-right">2017-8-10 12:10:21</span>
                 </li>
             </ul>
         </div>
         <div class="col-md-6">
             <div class="col-box article-list">
-                <h3>科技资讯</h3>
+                <div class="list-title clearfix">
+                    <h3 class="pull-left">科技资讯</h3>
+                    <a href="#" class="pull-right">+more</a>
+                </div>
                 <ul>
                     <li>
                         <a href="#">
@@ -118,7 +123,10 @@
         </div>
         <div class="col-md-6">
             <div class="col-box article-list">
-                <h3>财经资讯</h3>
+                <div class="list-title clearfix">
+                    <h3 class="pull-left">财经资讯</h3>
+                    <a href="#" class="pull-right">+more</a>
+                </div>
                 <ul>
                     <li>
                         <a href="#">
@@ -169,7 +177,10 @@
             </ul>
         </div>
         <div class="col-box article-list">
-            <h3>开发资讯</h3>
+            <div class="list-title clearfix">
+                <h3 class="pull-left">开发资讯</h3>
+                <a href="#" class="pull-right">+more</a>
+            </div>
             <ul>
                 <li>
                     <a href="#">
@@ -253,7 +264,7 @@
             </div>
         </div>
         <div class="col-box album-list">
-            <div class="clearfix">
+            <div class="list-title clearfix">
                 <h3 class="pull-left">个人摄影</h3>
                 <a href="#" class="pull-right">+more</a>
             </div>
