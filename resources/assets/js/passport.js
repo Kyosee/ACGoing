@@ -1,7 +1,10 @@
 $(function(){
+    var refreshCaptcha = function(el){
+        el.attr('src', el.data('url') + '?' + Math.random());
+    }
+
     $(".captcha").click(function(){
-        var _this = $(this);
-        _this.attr('src', _this.data('url') + '?' + Math.random());
+        refreshCaptcha($(this));
     })
 
     /**
@@ -28,6 +31,9 @@ $(function(){
             error: function(error){
                 $.each(error.responseJSON, function(index, val) {
                     $("input[name="+index+"]").focus();
+                    if(index == 'captcha'){
+                        refreshCaptcha($(".captcha"));
+                    }
                     layer.msg(val[0]);
                     return false;
                 });
