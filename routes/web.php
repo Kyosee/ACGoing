@@ -16,7 +16,6 @@ Route::get('/', 'HomeController@home')->name('home');
 Route::get('/kit', 'KitController@testSP')->name('kit');
 
 // passport
-
 Route::group([], function(){
     Route::get('passport/signup', 'PassportController@signup')->name('signup');
     Route::post('passport/signup', 'PassportController@subReg');
@@ -30,6 +29,11 @@ Route::group([], function(){
     Route::get('passport/logout', 'PassportController@logout')->name('logout');
 
     Route::get('passport/captcha', 'PassportController@captcha')->name('passport.captcha');
+});
+
+Route::group(['prefix' => 'member', 'namespace' => 'Member'], function(Router $router){
+    Route::get('/', 'HomeController@index')->name('member');
+    Route::get('/{user?}', 'HomeController@show')->name('member');
 });
 
 Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard'], function(Router $router){
