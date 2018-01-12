@@ -1,4 +1,5 @@
 @extends('layouts.default')
+@section('title', '用户登录')
 @section('req_js')
 <script src="{{ mix('/js/passport.js') }}" charset="utf-8"></script>
 @stop
@@ -6,7 +7,7 @@
     <div class="col-md-5 col-md-offset-2 passport-box">
         <div class="col-box">
             <div class="passport-title">
-                <a href="{{ route('signup') }}">注册</a>
+                <a href="{{ route('register') }}">注册</a>
                 <a class="active" href="{{ route('login') }}">登录</a>
             </div>
             <form method="POST" action="" class="passport-form">
@@ -26,7 +27,7 @@
                 </div>
                 <button type="submit" class="btn btn-success btn-lg full-width">登了个录</button>
                 <div class="checkbox">
-                    <a class="pull-left" href="{{ route('signup') }}">妹有账号？前去注册</a>
+                    <a class="pull-left" href="{{ route('register') }}">妹有账号？前去注册</a>
                     <a class="pull-right" href="{{ route('forget') }}">忘记密码？</a>
                 </div>
                 {{ csrf_field()}}

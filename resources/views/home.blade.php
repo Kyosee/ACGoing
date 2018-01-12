@@ -252,17 +252,7 @@
         </div>
     </div>
     <div class="col-md-3 pull-right">
-        <div class="col-box about">
-            <div class="about-top text-center">
-                <a href="#"><img class="about-avatar img-circle" src="https://avatars3.githubusercontent.com/u/5360841?v=3&amp;s=460" alt=""></a>
-            </div>
-            <div class="about-bottom">
-                <p><i class="fa fa-user"></i> <span>攻城大凉皮</span></p>
-                <p><i class="fa fa-map-marker"></i> <span>China Shandong</span></p>
-                <p><i class="fa fa-envelope-o"></i> <span>609671961@qq.com</span></p>
-                <p><i class="fa fa-plug"></i> <span>PHP ; JavaScript ; HTML ;</span></p>
-            </div>
-        </div>
+        @include('shared._user_base_info')
         <div class="col-box album-list">
             <div class="list-title clearfix">
                 <h3 class="pull-left">个人摄影</h3>

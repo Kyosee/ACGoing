@@ -3,20 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\UserModel;
+use App\Models\User;
 use Auth;
 
 class PassportController extends Controller
 {
     /**
-     * user signup view
+     * user register view
      */
-    public function signup(){
-        return view('passport.signup');
+    public function register(){
+        return view('passport.register');
     }
 
     /**
-     * user signup processing
+     * user register processing
      * @return [type] [description]
      */
     public function subReg(Request $request){
@@ -27,9 +27,9 @@ class PassportController extends Controller
             'is_agree'  => 'accepted',
         ]);
 
-        $UserModel = new UserModel();
-        if($UserModel->createNewUser($request)){
-            Auth::login($UserModel);
+        $User = new User();
+        if($User->createNewUser($request)){
+            Auth::login($User);
             return response()->json(['result' => true, 'redirect_url' => route('home')]);
         }else{
             return response()->json(['result' => false, 'msg' => '注册失败请稍后重试..']);

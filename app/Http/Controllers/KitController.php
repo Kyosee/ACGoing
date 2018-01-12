@@ -10,8 +10,8 @@ use Goutte\Client;
 use GuzzleHttp\Client as GuzzleClient;
 use Session;
 
-use App\Models\SpiderSiteModel;
-use App\Models\InformationModel;
+use App\Models\SpiderSite;
+use App\Models\Information;
 /**
  * Some tools
  */
@@ -38,14 +38,14 @@ class KitController extends Controller{
 
     public function testSP(){
 
-        $SpiderSiteModel = new SpiderSiteModel();
+        $SpiderSite = new SpiderSite();
 
 
-        $site_list = $SpiderSiteModel->rebuildData($SpiderSiteModel->get()->toArray());
+        $site_list = $SpiderSite->rebuildData($SpiderSite->get()->toArray());
         $spider = new MultithreadingSpider($site_list);
         $content = $spider->startSpider();
         var_dump($content);
-        $information = new InformationModel();
+        $information = new Information();
         var_dump($information->createInformation($content));
     }
 

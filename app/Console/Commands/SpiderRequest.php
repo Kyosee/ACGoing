@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use App\Models\SpiderSiteModel;
+use App\Models\SpiderSite;
 use App\Libraries\MultithreadingSpider;
 
 class SpiderRequest extends Command
@@ -39,9 +39,9 @@ class SpiderRequest extends Command
      */
     public function handle()
     {
-        $SpiderSiteModel = new SpiderSiteModel();
+        $SpiderSite = new SpiderSite();
 
-        $site_list = $SpiderSiteModel->rebuildData($SpiderSiteModel->get()->toArray());
+        $site_list = $SpiderSite->rebuildData($SpiderSite->get()->toArray());
         $Spider = new MultithreadingSpider($site_list);
         var_dump($Spider->startSpider());
 

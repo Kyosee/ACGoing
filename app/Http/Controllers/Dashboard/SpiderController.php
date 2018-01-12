@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Dashboard;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\SpiderSiteModel;
-use App\Models\SpiderSiteTypeModel;
+use App\Models\SpiderSite;
+use App\Models\SpiderSiteType;
 
 class SpiderController extends Controller
 {
@@ -15,17 +15,17 @@ class SpiderController extends Controller
      * Spider site list
      */
     public function site_type(){
-        $data = SpiderSiteTypeModel::all()->toArray();
+        $data = SpiderSiteType::all()->toArray();
         return view($this->view_prefix.'site_type', ['data_list' => $data]);
     }
 
     public function siteTypeStore(Request $request){
-        $SpiderSiteTypeModel = new SpiderSiteTypeModel();
-        $SpiderSiteTypeModel->name = $request->name;
+        $SpiderSiteType = new SpiderSiteType();
+        $SpiderSiteType->name = $request->name;
         if($id = $request->id){
-            $SpiderSiteTypeModel->where('id', $id)->update(['name' => $request->name]);
+            $SpiderSiteType->where('id', $id)->update(['name' => $request->name]);
         }else{
-            $SpiderSiteTypeModel->save();
+            $SpiderSiteType->save();
         }
         return back();
     }
@@ -34,19 +34,19 @@ class SpiderController extends Controller
      * soft delete site type
      */
     public function siteTypeDelete(Request $request){
-        return response()->json(['state' => !$request->id ? false :( SpiderSiteTypeModel::destroy($request->id) ? true : false )]);
+        return response()->json(['state' => !$request->id ? false :( SpiderSiteType::destroy($request->id) ? true : false )]);
     }
 
     /**
      * spider site
      */
     public function home(){
-        $site_list = SpiderSiteModel::paginate(15);
+        $site_list = SpiderSite::paginate(15);
         return view($this->view_prefix.'home', ['site_list' => $site_list]);
     }
 
     public function siteStore(Request $request){
-        $SpiderSiteModel = new SpiderSiteModel();
+        $SpiderSite = new SpiderSite();
         $data = $request->all();
 
         $filldata  = function($model, $data) {
@@ -55,12 +55,12 @@ class SpiderController extends Controller
             $model->info_filter = json_encode($data['info_filter']['title'][0] ? $model->rebuildFilter($data['info_filter']) : '');
         };
 
-        if($data['id'] && $site = SpiderSiteModel::find($data['id'])){
+        if($data['id'] && $site = SpiderSite::find($data['id'])){
             $filldata($site, $data);
             $site->save();
         }else{
-            $filldata($SpiderSiteModel, $data);
-            $SpiderSiteModel->save();
+            $filldata($SpiderSite, $data);
+            $SpiderSite->save();
         }
         return back();
     }
@@ -69,13 +69,13 @@ class SpiderController extends Controller
      * site details
      */
     public function site_details($id = 0){
-        $type_list = SpiderSiteTypeModel::all()->toArray();
+        $type_list = SpiderSiteType::all()->toArray();
         $site_data = '';
 
         if($id){
-            $site_data = SpiderSiteModel::find($id)->toArray();
-            $site_data['base_filter'] = SpiderSiteModel::debuildFilter($site_data['base_filter']);
-            $site_data['info_filter'] = SpiderSiteModel::debuildFilter($site_data['info_filter']);
+            $site_data = SpiderSite::find($id)->toArray();
+            $site_data['base_filter'] = SpiderSite::debuildFilter($site_data['base_filter']);
+            $site_data['info_filter'] = SpiderSite::debuildFilter($site_data['info_filter']);
         }
 
         return view($this->view_prefix.'site_details', ['type_list' => $type_list, 'data' => $site_data]);

@@ -8,7 +8,7 @@ $(function(){
     })
 
     /**
-     * signup form
+     * register form
      */
     var passportForm = $(".passport-form");
 

@@ -16,6 +16,11 @@ $site-color-green: #6BC30D;
 $site-summary-color: #999;
 $site-title-color: #636b6f;
 
+$wechat: #44b549;
+$github: #24292e;
+$weibo: #ff8140;
+$qq: #6daaea;
+
 // mobile
 .navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse{
     max-height: 375px;
@@ -23,13 +28,72 @@ $site-title-color: #636b6f;
 
 //pub
 a{
+    color: $site-color-black;
     transition: all .3s ease .1s;
+    &, &:hover, &:focus{
+        text-decoration: none;
+    }
+}
+
+.btn-follow {
+  color: #fff;
+  background-color: #fa7d3c;
+}
+
+.btn-follow:focus,
+.btn-follow.focus {
+  color: #fff;
+  background-color: #f4722e;
+}
+
+.btn-follow:hover {
+  color: #fff;
+  background-color: #f4722e;
+}
+
+.btn-follow:active,
+.btn-follow.active,
+.open > .btn-follow.dropdown-toggle {
+  color: #fff;
+  background-color: #f4722e;
+}
+
+.btn-follow:active:hover,
+.btn-follow:active:focus,
+.btn-follow:active.focus,
+.btn-follow.active:hover,
+.btn-follow.active:focus,
+.btn-follow.active.focus,
+.open > .btn-follow.dropdown-toggle:hover,
+.open > .btn-follow.dropdown-toggle:focus,
+.open > .btn-follow.dropdown-toggle.focus {
+  color: #fff;
+  background-color: #f4722e;
+}
+
+.btn-follow:active,
+.btn-follow.active,
+.open > .btn-follow.dropdown-toggle {
+  background-image: none;
+}
+
+.btn-follow.disabled:hover,
+.btn-follow.disabled:focus,
+.btn-follow.disabled.focus,
+.btn-follow[disabled]:hover,
+.btn-follow[disabled]:focus,
+.btn-follow[disabled].focus,
+fieldset[disabled] .btn-follow:hover,
+fieldset[disabled] .btn-follow:focus,
+fieldset[disabled] .btn-follow.focus {
+  background-color: #fa7d3c;
 }
 
 @media (min-width: 1430px){
     .container {
         width: 1430px;
     }
+
 }
 
 .full-width{ width: 100%;}
@@ -37,6 +101,8 @@ a{
 .col-md-8, .col-md-4, .col-md-6{
     padding: 0 10px !important;
 }
+
+ul{ padding: 0; }
 
 li{
     list-style: none;
@@ -75,12 +141,10 @@ a:hover, a:focus{
     margin: 10px 0;
     float: left;
     border-radius: 3px;
-    // border: 1px solid #ddd;
     background: #fff;
-    // box-shadow: 2px 2px 3px 1px #ddd;
 }
 
-// header
+/* header */
 .navbar-inverse{
     background-color: $site-color-black;
 }
@@ -89,7 +153,6 @@ a:hover, a:focus{
     margin-right: 10px;
     font-size: 1.7em;
     color: $site-color-green;
-    text-decoration: none !important;
     letter-spacing: -1px;
     font-weight: bold;
     line-height: 50px;
@@ -162,7 +225,6 @@ a:hover, a:focus{
     }
 }
 
-// site-content
 .site-content{
     margin-top:60px;
     margin-bottom: 20px;
@@ -172,37 +234,13 @@ a:hover, a:focus{
     }
 }
 
-// home
-.about-top{
-    width: 100%;
-    background: url('../images/about_bg.png');
-    background-size: 100% 150%;
-    .about-avatar{
-        width: 150px;
-        position: relative;
-        width: 40%;
-        top: 70px;
-        transition: all .5s ease .1s;
-    }
-
-    .about-avatar:hover{
-        transform: scale(1.2);
-    }
-}
-
-.about-bottom{
-    padding: 85px 20px 10px 20px;
-    font-size: 1.2em;
-    line-height: 35px;
-}
-
+/* home page */
 
 .album-list, .article-list{
     padding: 10px 15px;
 
     a{
         color: $site-title-color;
-        text-decoration: none;
     }
 
     h3{
@@ -317,7 +355,7 @@ a:hover, a:focus{
     }
 }
 
-// footer
+/* footer */
 @media (max-width: 992px){
     .footer{
         padding-top: 20px;
@@ -354,7 +392,7 @@ a:hover, a:focus{
     width: 100%;
 }
 
-// passport
+/* passport page */
 .passport-title{
     height: 50px;
     background: $site-color-black;
@@ -371,9 +409,6 @@ a:hover, a:focus{
         margin: 0 10px;
     }
 
-    a:hover, a:focus{
-        text-decoration: none;
-    }
 
     a.active{
         color: $site-color-green;
@@ -386,10 +421,6 @@ a:hover, a:focus{
 
     & > .form-group-lg, & > .btn{
         margin: 5px 0;
-    }
-
-    a{
-        text-decoration: none;
     }
 
     .inp-captcha{
@@ -413,5 +444,148 @@ a:hover, a:focus{
     .passport-box, .passport-fast{
         margin-top: 7%;
         margin-bottom: 131px;
+    }
+}
+
+/* user info box */
+
+.info-top{
+    width: 100%;
+    background: url('../images/about_bg.png');
+    background-size: 100% 150%;
+    .info-avatar{
+        width: 150px;
+        position: relative;
+        width: 40%;
+        top: 70px;
+        transition: all .5s ease .1s;
+    }
+
+    .info-avatar:hover{
+        transform: scale(1.2);
+    }
+}
+
+.info-bottom{
+    padding: 85px 20px 10px 20px;
+    font-size: 1.2em;
+    line-height: 35px;
+}
+
+.info-opt{
+    .info-opt-edit{
+        width: 100%;
+        padding: 5px 5px 15px 5px;
+    }
+
+    div{
+        padding: 15px 10px;
+        width: 50%;
+    }
+
+    @media (max-width: 1430px){
+        & > div{
+            width: 100% !important;
+            padding: 5px;
+        }
+    }
+
+    @media (max-width: 991px){
+        & > div{
+            padding: 15px 10px;
+            width: 50% !important;
+        }
+    }
+
+    a{
+        border-radius: 5px;
+        text-align: center;
+        width: 100%;
+    }
+    a:hover, a:focus{ color: #fff !important; }
+}
+
+.info-contact{
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+
+    .github{
+        border: 1px solid $github;
+        a{ color: $github; }
+    }
+    .wechat{
+        border: 1px solid $wechat;
+        a{ color: $wechat; }
+    }
+    .weibo{
+        border: 1px solid $weibo;
+        a{ color: $weibo; }
+    }
+    .qq{
+        border: 1px solid $qq;
+        a{ color: $qq; }
+    }
+
+    li {
+        a{
+            display: block;
+        }
+
+        text-align: center;
+        line-height: 35px;
+        margin: 5px;
+        border-radius: 5px;
+    }
+
+    li:hover{
+        border-color: $site-color-green;
+        transition: all .2s ease .1s;
+    }
+}
+
+.info-follow{
+    padding-top: 10px;
+
+    li{
+        text-align: center;
+        float: left;
+        width: 33%;
+
+        &:nth-child(2){
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+        }
+
+        a{
+            color: $site-color-black;
+        }
+
+        span{
+            font-size: 0.9em;
+            line-height: 15px;
+            color: #808080;
+        }
+
+        strong, span{
+            display:block;
+        }
+    }
+}
+
+/* user center */
+
+.ucenter-menu{
+    margin-bottom: 0;
+    padding: 15px 25px 20px 25px;
+
+    li{
+        text-align: center;
+        line-height: 3em;
+        border-bottom: 1px solid #f1f1f1;
+
+        a{
+            font-size: 1em;
+            color: $site-color-black;
+        }
     }
 }

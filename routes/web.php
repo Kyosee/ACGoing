@@ -17,8 +17,8 @@ Route::get('/kit', 'KitController@testSP')->name('kit');
 
 // passport
 Route::group([], function(){
-    Route::get('passport/signup', 'PassportController@signup')->name('signup');
-    Route::post('passport/signup', 'PassportController@subReg');
+    Route::get('passport/register', 'PassportController@register')->name('register');
+    Route::post('passport/register', 'PassportController@subReg');
 
     Route::get('passport/login', 'PassportController@login')->name('login');
     Route::post('passport/login', 'PassportController@subLogin');
@@ -31,10 +31,11 @@ Route::group([], function(){
     Route::get('passport/captcha', 'PassportController@captcha')->name('passport.captcha');
 });
 
-Route::group(['prefix' => 'member', 'namespace' => 'Member'], function(Router $router){
-    Route::get('/', 'HomeController@index')->name('member');
-    Route::get('/{user?}', 'HomeController@show')->name('member');
+// user center
+Route::group(['namespace' => 'User'], function(Router $router){
+    $router->resource('users', 'HomeController');
 });
+
 
 Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard'], function(Router $router){
     $router->get('/', ['as' => 'dbhome', 'uses' => 'HomeController@home']);

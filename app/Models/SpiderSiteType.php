@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class SpiderSiteTypeModel extends Model
+class SpiderSiteType extends Model
 {
     use SoftDeletes;
 
@@ -18,6 +18,6 @@ class SpiderSiteTypeModel extends Model
     ];
 
     public function getSite(){
-        return $this->belongsTo('App\Models\SpiderSiteModel', 'site_type_id');
+        return $this->belongsTo('App\Models\SpiderSite', 'site_type_id');
     }
 }

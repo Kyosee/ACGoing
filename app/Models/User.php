@@ -6,7 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class UserModel extends Authenticatable
+class User extends Authenticatable
 {
     use Notifiable;
 
@@ -35,7 +35,7 @@ class UserModel extends Authenticatable
      * user profile
      */
     public function profile(){
-        return $this->hasOne('App\Models\UserProfileModel', 'user_id');
+        return $this->hasOne('App\Models\UserProfile', 'user_id');
     }
 
     /**
