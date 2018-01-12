@@ -1,4 +1,4 @@
-<div class="col-md-3 pull-left">
+<div class="col-md-3 col-xs-12 pull-left">
     @include('shared._user_base_info')
 
     <div class="col-box">

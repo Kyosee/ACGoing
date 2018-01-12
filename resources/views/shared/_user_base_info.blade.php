@@ -1,6 +1,6 @@
 <div class="col-box info">
     @auth
-    <div class="info-top text-center">
+    <div class="info-top text-center" style="background: url('{{ asset('/images/about_bg.png') }}');background-size: 100% 150%;">
         <a href="{{ route('users.show', Auth::user()) }}"><img class="info-avatar img-circle" src="https://avatars3.githubusercontent.com/u/5360841?v=3&amp;s=460" alt=""></a>
     </div>
     <div class="info-bottom">
@@ -49,6 +49,17 @@
             <li class="weibo"><a href="#"><i class="fa fa-weibo"></i> Weibo</a></li>
             <li class="qq"><a href="#"><i class="fa fa-qq"></i> QQ</a></li>
         </ul>
+    </div>
+    @else
+    <div class="info-top">
+        <div class="info-opt text-center clearfix">
+            <div class="pull-left">
+                <a href="{{ route('login') }}" class="btn btn-follow"><i class="fa fa-sign-in"></i> 去登陆</a>
+            </div>
+            <div class="pull-left">
+                <a href="{{ route('register') }}" class="btn btn-success"><i class="fa fa-edit"></i> 去注册</a>
+            </div>
+        </div>
     </div>
     @endauth
 </div>
