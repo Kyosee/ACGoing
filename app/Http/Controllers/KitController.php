@@ -11,7 +11,7 @@ use GuzzleHttp\Client as GuzzleClient;
 use Session;
 
 use App\Models\SpiderSite;
-use App\Models\Information;
+use App\Models\News;
 /**
  * Some tools
  */
@@ -45,8 +45,8 @@ class KitController extends Controller{
         $spider = new MultithreadingSpider($site_list);
         $content = $spider->startSpider();
         var_dump($content);
-        $information = new Information();
-        var_dump($information->createInformation($content));
+        $News = new News();
+        var_dump($News->createNews($content));
     }
 
     // public function testSP(){

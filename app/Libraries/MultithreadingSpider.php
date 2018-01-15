@@ -57,9 +57,10 @@ class MultithreadingSpider {
                             $news[$key] = trim($node_info->text());
 
                             // 判定是否采集到文章信息及相应URL，若需要采集文章内容信息则执行内容采集
-                            if($key == 'title' && $news['url'] = $node_info->attr('href'))
-                                $child = new Crawler((string)$client->request('GET', $news['url'])->getBody());
-                                var_dump($child->filter('.property > .name > a')->html());
+                            // if($key == 'title' && $news['url'] = $node_info->attr('href'))
+                            //     $child = new Crawler((string)$client->request('GET', $news['url'])->getBody());
+                            //     var_dump($child->filter('.property > .name > a')->html());
+                            //     exit;
                         }
                     }
 

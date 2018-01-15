@@ -36,6 +36,11 @@ Route::group(['namespace' => 'User'], function(Router $router){
     $router->resource('users', 'HomeController');
 });
 
+// News
+Route::group(['namespace' => 'News', 'prefix' => 'news'], function(Router $router){
+    $router->get('/', 'HomeController@index')->name('news');
+});
+
 
 Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard'], function(Router $router){
     $router->get('/', ['as' => 'dbhome', 'uses' => 'HomeController@home']);

@@ -11,11 +11,11 @@
     	    </div>
             <nav class="nav collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-left">
-                    <li><a href="{{ route('home') }}" class="active">主页</a></li>
-                    <li><a href="#">文章</a></li>
-                    <li><a href="#">视频</a></li>
-                    <li><a href="#">摄影</a></li>
-                    <li><a href="#">关于我</a></li>
+                    <li><a href="{{ route('home') }}" @if(Request::is('home')) class="active" @endif>主页</a></li>
+                    <li><a href="{{ route('news') }}" @if(Request::is('news')) class="active" @endif>资讯</a></li>
+                    <li><a href="#">经验</a></li>
+                    <li><a href="#">话题</a></li>
+                    <li><a href="#">问答</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right nav-sign">
