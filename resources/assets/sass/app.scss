@@ -40,6 +40,8 @@ $qq: #6daaea;
 //pub
 .green{ color: $site-color-green; }
 
+*, a{ font-family: "微软雅黑"; }
+
 a{
     color: $site-color-black;
     transition: all .3s ease .1s;
@@ -339,8 +341,10 @@ a:hover, a:focus{
             border-bottom: 1px solid #dadada;
             line-height: 35px;
             a{
+                height: 28px;
+                line-height: 28px;
                 font-size: 16px;
-                display: flow-root;
+                display: block;
             }
         }
 

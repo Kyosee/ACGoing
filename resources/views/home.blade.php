@@ -251,7 +251,7 @@
             </ul>
         </div>
     </div>
-    <div class="col-md-3 pull-right">
+    <div class="col-md-3 col-xs-12 pull-right">
         @include('shared._user_base_info')
         <div class="col-box album-list">
             <div class="list-title clearfix">
