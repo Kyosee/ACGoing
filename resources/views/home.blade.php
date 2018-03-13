@@ -12,61 +12,61 @@
                 <li>
                     <a href="#">
                         <div class="pull-left">SpringBoot 实战：我们的第一款开源软件</div>
-                        <div class="pull-right"> 0 / 0 / 0 / 10小时前</div>
+                        <div class="pull-right article-status"> 0 / 0 / 0 / 10小时前</div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <div class="pull-left">SpringBoot 实战：我们的第一款开源软件</div>
-                        <div class="pull-right"> 0 / 0 / 0 / 10小时前</div>
+                        <div class="pull-right article-status"> 0 / 0 / 0 / 10小时前</div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <div class="pull-left">SpringBoot 实战：我们的第一款开源软件</div>
-                        <div class="pull-right"> 0 / 0 / 0 / 10小时前</div>
+                        <div class="pull-right article-status"> 0 / 0 / 0 / 10小时前</div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <div class="pull-left">SpringBoot 实战：我们的第一款开源软件</div>
-                        <div class="pull-right"> 0 / 0 / 0 / 10小时前</div>
+                        <div class="pull-right article-status"> 0 / 0 / 0 / 10小时前</div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <div class="pull-left">SpringBoot 实战：我们的第一款开源软件</div>
-                        <div class="pull-right"> 0 / 0 / 0 / 10小时前</div>
+                        <div class="pull-right article-status"> 0 / 0 / 0 / 10小时前</div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <div class="pull-left">SpringBoot 实战：我们的第一款开源软件</div>
-                        <div class="pull-right"> 0 / 0 / 0 / 10小时前</div>
+                        <div class="pull-right article-status"> 0 / 0 / 0 / 10小时前</div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <div class="pull-left">SpringBoot 实战：我们的第一款开源软件</div>
-                        <div class="pull-right"> 0 / 0 / 0 / 10小时前</div>
+                        <div class="pull-right article-status"> 0 / 0 / 0 / 10小时前</div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <div class="pull-left">SpringBoot 实战：我们的第一款开源软件</div>
-                        <div class="pull-right"> 0 / 0 / 0 / 10小时前</div>
+                        <div class="pull-right article-status"> 0 / 0 / 0 / 10小时前</div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <div class="pull-left">SpringBoot 实战：我们的第一款开源软件</div>
-                        <div class="pull-right"> 0 / 0 / 0 / 10小时前</div>
+                        <div class="pull-right article-status"> 0 / 0 / 0 / 10小时前</div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <div class="pull-left">SpringBoot 实战：我们的第一款开源软件</div>
-                        <div class="pull-right"> 0 / 0 / 0 / 10小时前</div>
+                        <div class="pull-right article-status"> 0 / 0 / 0 / 10小时前</div>
                     </a>
                 </li>
             </ul>
