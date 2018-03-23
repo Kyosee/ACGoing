@@ -41,17 +41,10 @@ Route::group(['namespace' => 'News', 'prefix' => 'news'], function(Router $route
     $router->get('/', 'HomeController@index')->name('news');
 });
 
-Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard'], function(Router $router){
-    $router->get('/', ['as' => 'dbhome', 'uses' => 'HomeController@home']);
 
-    // Spider
-    Route::group(['prefix' => 'spider'], function(Router $router){
-        $router->get('/spider_site_type', 'SpiderController@site_type')->name('spider_site_type');
-        $router->post('/spider_site_type', 'SpiderController@siteTypeStore');
-        $router->delete('/spider_site_type', 'SpiderController@siteTypeDelete');
+Route::domain('{account}.myapp.com')->group(function () {
 
-        $router->get('/', 'SpiderController@home')->name('site');
-        $router->post('/site_details/{id?}', 'SpiderController@siteStore');
-        $router->get('/site_details/{id?}', 'SpiderController@site_details')->name('site_details');
-    });
+});
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(Router $router){
+    $router->get('/', 'IndexController@index');
 });
